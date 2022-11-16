@@ -232,7 +232,7 @@ Project Link: [https://github.com/matthew-mcateer/practicing_trustworthy_machine
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-We'd like to thank the following people for their reviews of the book:
+We'd like to thank the following people for their reviews and proofreading of the book, as well as for their work on many of the core technologies and libraries this book dives into:
 
 * [Divesh Shrivastava]()
 * [Kush Varshney]()
@@ -241,11 +241,24 @@ We'd like to thank the following people for their reviews of the book:
 * [Josh Albrecht](https://twitter.com/joshalbrecht)
 * [Kanjun Qiu](https://twitter.com/kanjun)
 * [Chelsea Sierra Voss](https://twitter.com/csvoss)
-* [Georgios Kaissis](https://twitter.com/GKaissis)
 * [Jwala Dhamala]()
 * [Trista Cao]()
+* [Andrew Trask](https://twitter.com/iamtrask)
+* [Yonah Borns-Weil](https://scholar.google.co.uk/scholar?hl=en&as_sdt=0%2C5&q=author%3A%22Yonah+Borns-Weil%22&btnG=)
+* [Alexander Ziller](https://scholar.google.co.uk/citations?user=Ir90mU4AAAAJ&hl=en&oi=ao)
+* [Antonio Lopardo](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Antonio%20Lopardo%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+* [Benjamin Szymkow](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Benjamin%20Szymkow%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+* [Bobby Wagner](https://scholar.google.co.uk/citations?user=gQ4MPnkAAAAJ&hl=en&oi=ao)
+* [Emma Bluemke](https://scholar.google.co.uk/citations?user=7ig0Hj0AAAAJ&hl=en&oi=ao)
+* [Jean-Mickael Nounahon](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Jean-Mickael%20Nounahon%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+* [Jonathan Passerat-Palmbach](https://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Jonathan%20Passerat-Palmbach%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+* [Kritika Prakash](https://scholar.google.co.uk/citations?user=JC0iWhMAAAAJ&hl=en&oi=ao)
+* [Nick Rose]()
+* [Théo Ryffel](https://scholar.google.co.uk/citations?user=JbSRqs8AAAAJ&hl=en&oi=ao)
+* [Zarreen Naowal Reza](https://scholar.google.co.uk/citations?user=YTYweEwAAAAJ&hl=en&oi=ao)
+* [Georgios Kaissis](https://twitter.com/GKaissis)
 
-We would also like to dedicate this book to the memory of [Peter Eckersley](https://www.wsj.com/articles/peter-eckersley-helped-encrypt-internet-traffic-to-foil-snoops-11662732014)
+We would also like to dedicate this book to the memory of security researcher, internet privacy activist, and AI ethics researcher [Peter Eckersley](https://www.wsj.com/articles/peter-eckersleyhelped-encrypt-internet-traffic-to-foil-snoops-11662732014) (1979 to 2022). Thanks for your work on tools such as Let’s Encrypt, Privacy Badger, Certbot, HTTPS Everywhere, SSL Observatory and Panopticlick, for advancing AI ethics in a pragmatic, policy-focused, and actionable way. Thank you also for offering to proofread this book in what unexpectedly turned out to be your last months.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
