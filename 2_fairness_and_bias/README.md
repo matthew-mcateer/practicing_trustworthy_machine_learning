@@ -1,1 +1,1 @@
-# Chapter 3: Fairness and Bias
+# Chapter 2: Fairness and Bias
