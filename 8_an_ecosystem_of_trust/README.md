@@ -1,1 +1,1 @@
-# Chapter 9: An Ecosystem of Trust
+# Chapter 8: An Ecosystem of Trust
