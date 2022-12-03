@@ -6,12 +6,20 @@ CHAPTER_TO_NB = {
     "Chapter 1: BERT attack": "1_privacy/Chapter_1_BERT_attack",
     "Chapter 1: Pytorch DP Demo": "1_privacy/Chapter_1_Pytorch_DP_Demo",
     "Chapter 1: SMPC Example": "1_privacy/Chapter_1_SMPC_Example",
+    "Chapter 2: Evaluating Causal LMs on BOLD": "2_fairness_and_bias/Chapter_2_Evaluating_LMs_on_BOLD.ipynb",
     "Chapter 3: CLIP Saliency mapping Part1": "3_model_explainability_and_interpretability/Chapter_3_CLIP_Saliency_mapping_Part1",
     "Chapter 3: CLIP Saliency mapping Part2": "3_model_explainability_and_interpretability/Chapter_3_CLIP_Saliency_mapping_Part2",
     "Chapter 3: Interpreting GPT": "3_model_explainability_and_interpretability/Chapter_3_Interpreting_GPT",
     "Chapter 3: LIME for Transformers": "3_model_explainability_and_interpretability/Chapter_3_LIME_for_Transformers",
     "Chapter 3: SHAP for Transformers": "3_model_explainability_and_interpretability/Chapter_3_SHAP_for_Transformers",
+    "Chapter 4: HopSkipJump Attack on ImageNet": "4_robustness/Chapter_4_HopSkipJump_Attack_on_ImageNet.ipynb",
+    "Chapter 4: Simple Transparent Adversarial Examples": "4_robustness/Chapter_4_Simple_Transparent_Adversarial_Examples.ipynb",
     "Chapter 5: Synthetic Data Fractals": "5_secure_and_trustworthy_data_generation/Chapter_5_Synthetic_Data_Fractals",
+    "Chapter 6: Federated Learning Simulations": "6_more_state_of_the_art_research_questions/Chapter_6_Federated_Learning_Simulations.ipynb",
+    "Chapter 6: Homomorphic Encryption NN": "6_more_state_of_the_art_research_questions/Chapter_6_Homomorphic_Encryption_NN.ipynb",
+    "Chapter 7: Bootstrap Confidence Intervals": "7_from_theory_to_practice/Chapter_7_Bootstrapping_Code_sample.ipynb",
+    "Chapter 7: Triangle Plot": "7_from_theory_to_practice/Chapter_7_Triangle_Plot.ipynb",
+
 }
 
 
@@ -43,10 +51,13 @@ def _find_text_in_file(filename, start_prompt, end_prompt):
 
 
 def create_table():
-    data = {"Chapter": [], "Colab": [], "Kaggle": [], "Gradient": [], "Studio Lab": []}
+    data = {"Chapter": [], "Colab": [], "Kaggle": [], "Gradient": [], "Studio Lab": [], "Binder": []}
     for title, nb in CHAPTER_TO_NB.items():
         nb_path = f"{GITHUB_PATH_PREFIX}{nb}.ipynb"
-        data["Chapter"].append(title)
+        alt_nb_path = f"{nb}.ipynb".replace("/", "%2F")
+        data["Chapter"].append(
+            f"[{title}]({nb})"
+        )
         data["Colab"].append(
             f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/{nb_path})"
         )
@@ -58,6 +69,9 @@ def create_table():
         )
         data["Studio Lab"].append(
             f"[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/{nb_path})"
+        )
+        data["Binder"].append(
+            f"[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthew-mcateer/practicing_trustworthy_machine_learning/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning%2Fblob%2Fmain%2F{alt_nb_path})"
         )
     return pd.DataFrame(data).to_markdown(index=False) + "\n"
 
