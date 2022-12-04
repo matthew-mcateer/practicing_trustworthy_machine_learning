@@ -73,9 +73,13 @@
 
 
 <!-- ABOUT THE PROJECT -->
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning?ref=badge_large)
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](images/book_cover.jpeg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning?ref=badge_shield)
 
 A book on how to make ML products that users can trust. [Available on Amazon](https://www.amazon.com/Practicing-Trustworthy-Machine-Learning-Transparent/dp/1098120272/)
 
