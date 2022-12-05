@@ -22,7 +22,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning">
-    <img src="images/book_cover.jpeg" alt="book-cover" height="200"  id="book-cover">
+    <img src="images/book_cover.jpg" alt="book-cover" height="200"  id="book-cover">
   </a>
 
 <h3 align="center">Practicing Trustworthy Machine Learning</h3>
@@ -33,7 +33,7 @@
     <a href="https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning">View Demo</a>
+    <a href="#usage">View Demo</a>
     ·
     <a href="https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning/issues">Report Bug</a>
     ·
@@ -78,7 +78,8 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](images/book_cover.jpeg)
+[![Product Name Screen Shot][product-screenshot]](images/book_cover.jpg)
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning?ref=badge_shield)
 
 A book on how to make ML products that users can trust. [Available on Amazon](https://www.amazon.com/Practicing-Trustworthy-Machine-Learning-Transparent/dp/1098120272/)
@@ -121,11 +122,16 @@ Here is a list of prerequisites you need to install before you can start using t
   ```bash
   $ conda env create -f environment.yml
   ```
+  Alternatlively, you can use [`mamba`](https://mamba.readthedocs.io/en/latest/index.html), which is a faster way of building `conda` environments:
+  ```bash
+  $ mamba env create -f environment.yml
+  ```
 3. Once you've installed the dependencies, you can activate the `conda` environment and spin up the notebooks as follows:
   ```bash
   $ conda activate book
   $ jupyter notebook
   ```
+  (if using [`mamba`](https://mamba.readthedocs.io/en/latest/index.html), you should still use conda for activation and deactivation.)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -286,4 +292,4 @@ We would also like to dedicate this book to the memory of security researcher, i
 [license-url]: https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/matthewmcateer0
-[product-screenshot]: images/book_cover.jpeg
+[product-screenshot]: images/book_cover.jpg
