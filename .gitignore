@@ -110,6 +110,8 @@ ENV/
 env.bak/
 venv.bak/
 
+condaenv.*
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -130,3 +132,4 @@ dmypy.json
 
 # mac
 .DS_Store
+tmp/
