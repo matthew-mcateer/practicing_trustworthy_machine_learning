@@ -14,8 +14,15 @@
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
+[![Maintainability Rating][maintainability-shield]][maintainability-url]
+[![Technical Debt][technical-debt-shield]][technical-debt-url]
+[![Lines of Code][lines-of-code-shield]][lines-of-code-url]
+[![Code Smells][code-smells-shield]][code-smells-url]
+[![Security Rating][security-rating-shield]][security-rating-url]
+[![Bugs][bugs-shield]][bugs-url]
+[![Vulnerabilities][vulnerabilities-shield]][vulnerabilities-url]
+[![Duplicated Lines (%)][duplicated-lines-shield]][duplicated-lines-url]
+[![Reliability Rating][reliability-rating-shield]][reliability-rating-url]
 
 <!-- PROJECT LOGO -->
 
@@ -293,3 +300,21 @@ We would also like to dedicate this book to the memory of security researcher, i
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/matthewmcateer0
 [product-screenshot]: images/book_cover.jpg
+[maintainability-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=sqale_rating
+[maintainability-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[technical-debt-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=sqale_index
+[technical-debt-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[lines-of-code-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=ncloc
+[lines-of-code-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[code-smells-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=code_smells
+[code-smells-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[security-rating-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=security_rating
+[security-rating-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[bugs-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=bugs
+[bugs-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[vulnerabilities-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=vulnerabilities
+[vulnerabilities-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[duplicated-lines-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=duplicated_lines_density
+[duplicated-lines-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
+[reliability-rating-shield]: https://sonarcloud.io/api/project_badges/measure?project=matthew-mcateer_practicing_trustworthy_machine_learning&metric=reliability_rating
+[reliability-rating-url]: https://sonarcloud.io/summary/new_code?id=matthew-mcateer_practicing_trustworthy_machine_learning
