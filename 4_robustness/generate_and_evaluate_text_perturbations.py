@@ -2,10 +2,9 @@ import torch
 from nltk.corpus import wordnet as wn
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 import math
-from transformers import BertModel, BertConfig, BertTokenizer
+from transformers import BertModel, BertTokenizer
 from numpy import dot
 from numpy.linalg import norm
-import random 
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
@@ -13,10 +12,8 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 model = GPT2LMHeadModel.from_pretrained("gpt2")
 model.eval()
 
-def get_perturbations(sentence, constraint):
+def get_perturbations(sentence: str):
 	orig_sentence = sentence
-	tokens = sentence.split(' ')
-	num_to_replace = random.randint(1, len(tokens))
 	blob = TextBlob(sentence)
 	nouns = [n for n,t in blob.tags if 'NN' in t]
 	print(nouns)
@@ -37,7 +34,7 @@ def get_perturbations(sentence, constraint):
 def cosine_similarity(a, b):
 	return dot(a, b)/(norm(a)*norm(b))
 
-def get_fluency_score(text):
+def get_fluency_score(text: str):
     input_ids = torch.tensor(tokenizer.encode(text)).unsqueeze(0)
     with torch.no_grad():
         outputs = model(input_ids, labels=input_ids)
@@ -45,7 +42,7 @@ def get_fluency_score(text):
     perplexity = math.exp(loss.item()) 
     return perplexity
 
-def get_similarity(sentence, paraphrase):
+def get_similarity(sentence: str, paraphrase: str):
 	model = BertModel.from_pretrained("bert-base-cased")
 	tokenizer = BertTokenizer.from_pretrained("bert-base-cased")
 	input_1 = tokenizer(sentence, return_tensors="pt")
