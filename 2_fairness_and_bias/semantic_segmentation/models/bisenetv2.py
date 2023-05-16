@@ -287,11 +287,11 @@ class BiSeNetV2(nn.Module):
         seg_head_names = ['out', 'aux_c2', 'aux_c3', 'aux_c4', 'aux_c5']
         self.seg_heads = nn.ModuleDict(
             {
-                'out': SegmentationHead(128, num_categories, scale_factor=8),
-                'aux_c2': SegmentationHead(16, num_categories, scale_factor=4),
-                'aux_c3': SegmentationHead(32, num_categories, scale_factor=8),
-                'aux_c4': SegmentationHead(64, num_categories, scale_factor=16),
-                'aux_c5': SegmentationHead(128, num_categories, scale_factor=32),
+                seg_head_names[0]: SegmentationHead(128, num_categories, scale_factor=8),
+                seg_head_names[1]: SegmentationHead(16, num_categories, scale_factor=4),
+                seg_head_names[2]: SegmentationHead(32, num_categories, scale_factor=8),
+                seg_head_names[3]: SegmentationHead(64, num_categories, scale_factor=16),
+                seg_head_names[4]: SegmentationHead(128, num_categories, scale_factor=32),
             }
         )
 

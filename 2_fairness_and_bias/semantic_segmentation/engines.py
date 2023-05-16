@@ -27,7 +27,6 @@ def attach_lr_scheduler(
 def attach_training_logger(
     trainer: engine.Engine,
     writer: tensorboard.SummaryWriter,
-    log_interval: int = 10,
 ):
     @trainer.on(engine.Events.ITERATION_COMPLETED)
     def log_training_loss(engine: engine.Engine):
