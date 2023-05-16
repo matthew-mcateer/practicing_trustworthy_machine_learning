@@ -1,6 +1,10 @@
+from typing import List, Tuple
+
 import pandas as pd
 
-GITHUB_PATH_PREFIX = "matthew-mcateer/practicing_trustworthy_machine_learning/blob/main/"
+GITHUB_PATH_PREFIX = (
+    "matthew-mcateer/practicing_trustworthy_machine_learning/blob/main/"
+)
 
 CHAPTER_TO_NB = {
     "Chapter 1: BERT attack": "1_privacy/Chapter_1_BERT_attack",
@@ -19,11 +23,12 @@ CHAPTER_TO_NB = {
     "Chapter 6: Homomorphic Encryption NN": "6_more_state_of_the_art_research_questions/Chapter_6_Homomorphic_Encryption_NN",
     "Chapter 7: Bootstrap Confidence Intervals": "7_from_theory_to_practice/Chapter_7_Bootstrapping_Code_sample",
     "Chapter 7: Triangle Plot": "7_from_theory_to_practice/Chapter_7_Triangle_Plot",
-
 }
 
 
-def _find_text_in_file(filename, start_prompt, end_prompt):
+def _find_text_in_file(
+    filename: str, start_prompt: str, end_prompt: str
+) -> Tuple[str, int, int, List[str]]:
     """
     Find the text in `filename` between a line beginning with `start_prompt` and before `end_prompt`, removing empty
     lines.
@@ -50,28 +55,56 @@ def _find_text_in_file(filename, start_prompt, end_prompt):
     return "".join(lines[start_index:end_index]), start_index, end_index, lines
 
 
-def create_table():
-    data = {"Chapter": [], "Colab": [], "Kaggle": [], "Gradient": [], "Studio Lab": [], "Binder": []}
+def create_table() -> str:
+    data = {
+        "Chapter": [],
+        "GitHub": [],
+        "Colab": [],
+        "Kaggle": [],
+        "Gradient": [],
+        "Studio Lab": [],
+        "Binder": [],
+    }
     for title, nb in CHAPTER_TO_NB.items():
         nb_path = f"{GITHUB_PATH_PREFIX}{nb}.ipynb"
         alt_nb_path = f"{nb}.ipynb".replace("/", "%2F")
-        data["Chapter"].append(
-            f"[{title}]({nb})"
-        )
+        data["Chapter"].append(f"[{title}]({nb}.ipynb)")
         data["Colab"].append(
-            f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/{nb_path})"
+            (
+                f"[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]"
+                f"(https://colab.research.google.com/github/{nb_path})"
+            )
         )
         data["Kaggle"].append(
-            f"[![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/{nb_path})"
+            (
+                f"[![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]"
+                f"(https://kaggle.com/kernels/welcome?src=https://github.com/{nb_path})"
+            )
         )
         data["Gradient"].append(
-            f"[![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/{nb_path})"
+            (
+                f"[![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)]"
+                f"(https://console.paperspace.com/github/{nb_path})"
+            )
         )
         data["Studio Lab"].append(
-            f"[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/{nb_path})"
+            (
+                f"[![Open In SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)]"
+                f"(https://studiolab.sagemaker.aws/import/github/{nb_path})"
+            )
         )
         data["Binder"].append(
-            f"[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/matthew-mcateer/practicing_trustworthy_machine_learning/HEAD?urlpath=https%3A%2F%2Fgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning%2Fblob%2Fmain%2F{alt_nb_path})"
+            (
+                f"[![Binder](https://mybinder.org/badge_logo.svg)]"
+                f"(https://mybinder.org/v2/gh/matthew-mcateer/practicing_trustworthy_machine_learning/"
+                f"HEAD?urlpath=https%3A%2F%2Fgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning%2Fblob%2Fmain%2F{alt_nb_path})"
+            )
+        )
+        data["GitHub"].append(
+            (
+                f"[![GitHub](https://img.shields.io/badge/-View%20on%20GitHub-181717?logo=github&logoColor=ffffff)]"
+                f"(https://github.com/{nb_path})"
+            )
         )
     return pd.DataFrame(data).to_markdown(index=False) + "\n"
 
