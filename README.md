@@ -152,10 +152,10 @@ _For more details on these examples, please refer to the [Book these samples com
 
 A few places where you can get access to a GPU without paying for it:
 
-1. Google Colab
-2. Kaggle
-3. Gradient
-4. Studio Lab
+1. [Google Colab](https://colab.research.google.com/)
+2. [Kaggle](https://www.kaggle.com/)
+3. [Paperspace Gradient](https://www.paperspace.com/gradient)
+4. [AWS SageMaker Studio Lab](https://aws.amazon.com/sagemaker/studio-lab/)
 
 To use these cloud resources, you can click on one of the following links:
 
@@ -187,13 +187,18 @@ To use these cloud resources, you can click on one of the following links:
 
 Other resources include
 
-5. Google Cloud 
-6. Deepnote
-7. Microsoft Azure
-8. Amazon SageMaker
+5. [Google Cloud](https://cloud.google.com/)
+6. [Deepnote](https://deepnote.com/)
+7. [Microsoft Azure (Microsoft Machine Learning Studio)](https://ml.azure.com/)
+8. [Amazon SageMaker](https://aws.amazon.com/sagemaker/)
 
 Some of these are free forever, some have quotas.
 Usually most of these are better than buying expensive hardware.
+
+If you need a cloud GPU, two good options are...
+
+- http://vast.ai - has larger consumer GPU selection
+- http://runpod.io - has higher-end GPUs
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
