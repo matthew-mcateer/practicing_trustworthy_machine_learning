@@ -8,7 +8,7 @@ is_kaggle = "kaggle_secrets" in sys.modules
 torch_to_cuda = {"1.10.0": "cu113", "1.9.0": "cu111", "1.9.1": "cu111"}
 
 
-class TorchScatterInstallError(Exception):
+class RequirementsInstallError(Exception):
     def __init__(self, message):
         self.message = message
     def __str__(self):
@@ -35,19 +35,19 @@ def install_requirements(
         cmd.append("requirements.txt")
     process_install = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if process_install.returncode != 0:
-        raise Exception("😭 Failed to install base requirements")
+        raise RequirementsInstallError("😭 Failed to install base requirements")
     else:
         print("✅ Base requirements installed!")
     print("⏳ Installing Git LFS ...")
     process_lfs = subprocess.run(["apt", "install", "git-lfs"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if process_lfs.returncode == -1:
-        raise Exception("😭 Failed to install Git LFS and soundfile")
+        raise RequirementsInstallError("😭 Failed to install Git LFS and soundfile")
     else:
         print("✅ Git LFS installed!")
 
     if is_chapter2:
         transformers_cmd = "python -m pip install transformers==4.13.0".split()
-        process_scatter = subprocess.run(
+        _ = subprocess.run(
             transformers_cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -55,7 +55,7 @@ def install_requirements(
 
     if is_chapter6:
         transformers_cmd = "python -m pip install datasets==2.0.0".split()
-        process_scatter = subprocess.run(
+        _ = subprocess.run(
             transformers_cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -63,7 +63,7 @@ def install_requirements(
 
     if is_chapter10:
         wandb_cmd = "python -m pip install wandb".split()
-        process_scatter = subprocess.run(
+        _ = subprocess.run(
             wandb_cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -84,7 +84,7 @@ def install_requirements(
             stderr=subprocess.PIPE,
         )
         if process_scatter.returncode == -1:
-            raise TorchScatterInstallError(f"😭 Failed to install torch-scatter. torch-scatter installation returned code {process_scatter.returncode}")
+            raise RequirementsInstallError(f"😭 Failed to install torch-scatter. torch-scatter installation returned code {process_scatter.returncode}")
         else:
             print("torch-scatter installation returned code ", process_scatter.returncode)
             print("✅ torch-scatter installed!")
@@ -93,7 +93,7 @@ def install_requirements(
             ["apt", "install", "libsndfile1"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         if process_audio.returncode == -1:
-            raise Exception("😭 Failed to install soundfile")
+            raise RequirementsInstallError("😭 Failed to install soundfile")
         else:
             print("✅ soundfile installed!")
         print("🥳 Chapter installation complete!")
