@@ -10,7 +10,6 @@ class FCNResNet101(nn.Module):
         super().__init__()
         logging.info(f'creating model with categories: {categories}')
 
-        # todo(will.brennan) - find a nicer way of saving the categories in the state dict...
         self._categories = nn.ParameterDict({i: nn.Parameter(torch.Tensor(0)) for i in categories})
         num_categories = len(self._categories)
 
