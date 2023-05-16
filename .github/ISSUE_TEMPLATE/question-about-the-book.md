@@ -12,13 +12,13 @@ assignees: ''
 The question or comment is about chapter:
 
 * [ ] Introduction
-* [ ] Privacy
-* [ ] Fairness and Bias
-* [ ] Model Explainability and Interpretability
-* [ ] Robustness
-* [ ] Secure and Trustworthy Data Generation
-* [ ] More State of the Art Research Questions
-* [ ] From Theory to Practice
-* [ ] An Ecosystem of Trust
+* [ ] Chapter 1. Privacy
+* [ ] Chapter 2. Fairness and Bias
+* [ ] Chapter 3. Model Explainability and Interpretability
+* [ ] Chapter 4. Robustness
+* [ ] Chapter 5. Secure and Trustworthy Data Generation
+* [ ] Chapter 6. More State of the Art Research Questions
+* [ ] Chapter 7. From Theory to Practice
+* [ ] Chapter 8. An Ecosystem of Trust
 
 ## Question or comment
