@@ -10,10 +10,12 @@ import torch
 import transformers
 from IPython.display import set_matplotlib_formats
 
-# TODO: Consider adding SageMaker StudioLab
-is_colab = "google.colab" in sys.modules
-is_kaggle = "kaggle_secrets" in sys.modules
+# Check if we have a GPU
 is_gpu_available = torch.cuda.is_available()
+# Check if this is being run in Google Colab
+is_colab = "google.colab" in sys.modules
+# Check if this is being run in Kaggle
+is_kaggle = "kaggle_secrets" in sys.modules
 
 
 def install_mpl_fonts():
