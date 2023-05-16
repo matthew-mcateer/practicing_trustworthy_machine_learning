@@ -8,6 +8,13 @@ is_kaggle = "kaggle_secrets" in sys.modules
 torch_to_cuda = {"1.10.0": "cu113", "1.9.0": "cu111", "1.9.1": "cu111"}
 
 
+class TorchScatterInstallError(Exception):
+    def __init__(self, message):
+        self.message = message
+    def __str__(self):
+        return self.message
+
+
 def install_requirements(
     is_chapter2: bool = False, 
     is_chapter6: bool = False,
@@ -77,9 +84,10 @@ def install_requirements(
             stderr=subprocess.PIPE,
         )
         if process_scatter.returncode == -1:
-            raise Exception("😭 Failed to install torch-scatter")
+            raise TorchScatterInstallError(f"😭 Failed to install torch-scatter. torch-scatter installation returned code {process_scatter.returncode}")
         else:
-            print("torch-scatter installed!")
+            print("torch-scatter installation returned code ", process_scatter.returncode)
+            print("✅ torch-scatter installed!")
         print("⏳ Installing soundfile ...")
         process_audio = subprocess.run(
             ["apt", "install", "libsndfile1"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
