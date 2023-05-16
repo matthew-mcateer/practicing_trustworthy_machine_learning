@@ -85,7 +85,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](images/book_cover.jpg)
+<img src="images/book_cover.jpg" alt="book-cover" height="500"  id="book-cover-big">
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmatthew-mcateer%2Fpracticing_trustworthy_machine_learning?ref=badge_shield)
 
