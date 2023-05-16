@@ -1,7 +1,6 @@
 # syntax = docker/dockerfile:1.2.1
 
 FROM kubricdockerhub/kubruntu:latest
-USER root
 
 # Update the package lists for upgrades for security purposes
 RUN apt-get update
