@@ -100,6 +100,8 @@ A book on how to make ML products that users can trust. [Available on Amazon](ht
 * [HuggingFace](https://huggingface.co/)
 * [OpenMined](https://www.openmined.org/)
 
+For a full list of all GitHub projects referenced in the book, see the ["📕 Practicing Trustworthy ML" GitHub List](https://github.com/stars/matthew-mcateer/lists/practicing-trustworthy-ml)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
