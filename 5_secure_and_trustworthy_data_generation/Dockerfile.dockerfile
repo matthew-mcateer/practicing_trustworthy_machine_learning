@@ -14,8 +14,15 @@ RUN pip3 install jupyterlab watermark
 # Set the working directory
 WORKDIR /kubric
 
+RUN mkdir /kubric/images
+
 # Copy the notebook into the Docker image
 COPY Chapter_5_Synthetic_Data_Blender.ipynb /kubric
+
+# Copy the images into the Docker image
+COPY images/ptml_helloworld_blend.png /kubric/images
+COPY images/ptml_keyframing_blend.png /kubric/images
+COPY images/ptml_simulation_blend.png /kubric/images
 
 # Expose the port Jupyter Lab will be served on
 EXPOSE 8888
