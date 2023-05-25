@@ -1,8 +1,6 @@
 # Chapter 0: Introduction
 
-There are no tutorials or deep dives associated with this introduction chapter.
-
-That said, there are a few things that will be helpful to know before you dive into the rest of the book.
+There are a few things that will be helpful to know before you dive into the rest of the book.
 
 ## Getting started with HuggingFace Hub
 
@@ -23,3 +21,7 @@ notebook_login()
 ```
 
 When prompted, enter your token into the login menu that appears under the python cell of the notebook.
+
+## Running [`Chapter_0_Safely_Loading_Saved_Models.ipynb`](Chapter_0_Safely_Loading_Saved_Models.ipynb)
+
+No special instructions needed beyond what's specified for the various cloud services at the top of the notebook.
