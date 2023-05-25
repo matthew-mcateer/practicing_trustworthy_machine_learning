@@ -7,6 +7,7 @@ GITHUB_PATH_PREFIX = (
 )
 
 CHAPTER_TO_NB = {
+    "Chapter 0: Safely Loading Saved Models": "0_introduction/Chapter_0_Safely_Loading_Saved_Models",
     "Chapter 1: BERT attack": "1_privacy/Chapter_1_BERT_attack",
     "Chapter 1: Pytorch DP Demo": "1_privacy/Chapter_1_Pytorch_DP_Demo",
     "Chapter 1: SMPC Example": "1_privacy/Chapter_1_SMPC_Example",
