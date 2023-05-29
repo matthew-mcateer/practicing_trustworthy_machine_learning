@@ -19,14 +19,22 @@ RUN pip3 install torch pandas transformers detoxify
 
 RUN mkdir /app/semantic_segmentation
 RUN mkdir /app/semantic_segmentation/models
+RUN mkdir /app/prompts
 
 # Copy the notebooks into the Docker image
 COPY Chapter_2_Evaluating_LMs_on_BOLD.ipynb /app
 COPY categorizing_skin_characteristics.py /app
 COPY README.md /app
 
-# Copy the models into the Docker image
+# Copy the BOLD dataset to the Docker image
+COPY prompts/gender_prompt.json /app/prompts
+COPY prompts/political_ideology_prompt.json /app/prompts
+COPY prompts/profession_prompt.json /app/prompts
+COPY prompts/race_prompt.json /app/prompts
+COPY prompts/README.md /app/prompts
+COPY prompts/religious_ideology_prompt.json /app/prompts
 
+# Copy the models into the Docker image
 COPY semantic_segmentation/models/__init__.py /app/semantic_segmentation/models
 COPY semantic_segmentation/models/bisenetv2.py /app/semantic_segmentation/models
 COPY semantic_segmentation/models/fcn.py /app/semantic_segmentation/models
