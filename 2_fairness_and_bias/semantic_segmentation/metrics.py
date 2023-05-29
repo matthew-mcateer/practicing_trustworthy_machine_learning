@@ -31,4 +31,6 @@ class IoUMetric(metrics.Metric):
         self.num_intersection += num_intersection.item()
 
     def compute(self):
-        return self.num_intersection / max(1, self.num_total - self.num_intersection)
+        return self.num_intersection / max(
+            1, self.num_total - self.num_intersection
+        )

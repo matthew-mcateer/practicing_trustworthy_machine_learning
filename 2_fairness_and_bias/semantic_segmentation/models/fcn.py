@@ -8,9 +8,11 @@ from torchvision import models
 class FCNResNet101(nn.Module):
     def __init__(self, categories):
         super().__init__()
-        logging.info(f'creating model with categories: {categories}')
+        logging.info(f"creating model with categories: {categories}")
 
-        self._categories = nn.ParameterDict({i: nn.Parameter(torch.Tensor(0)) for i in categories})
+        self._categories = nn.ParameterDict(
+            {i: nn.Parameter(torch.Tensor(0)) for i in categories}
+        )
         num_categories = len(self._categories)
 
         self.model = models.segmentation.fcn_resnet101(pretrained=True)

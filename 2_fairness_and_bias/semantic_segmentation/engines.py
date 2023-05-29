@@ -18,8 +18,8 @@ def attach_lr_scheduler(
     @trainer.on(engine.Events.EPOCH_COMPLETED)
     def update_lr(engine: engine.Engine):
         current_lr = lr_scheduler.get_last_lr()[0]
-        logging.info(f'epoch: {engine.state.epoch} - current lr: {current_lr}')
-        writer.add_scalar('learning_rate', current_lr, engine.state.epoch)
+        logging.info(f"epoch: {engine.state.epoch} - current lr: {current_lr}")
+        writer.add_scalar("learning_rate", current_lr, engine.state.epoch)
 
         lr_scheduler.step()
 
@@ -40,8 +40,10 @@ def attach_training_logger(
         if idx_in_epoch % 10 != 0:
             return
 
-        logging.info(f'epoch[{epoch}] - iteration[{idx_in_epoch}/{epoch_length}] loss: {output:.3f}')
-        writer.add_scalar('loss', output, idx)
+        logging.info(
+            f"epoch[{epoch}] - iteration[{idx_in_epoch}/{epoch_length}] loss: {output:.3f}"
+        )
+        writer.add_scalar("loss", output, idx)
 
 
 def attach_metric_logger(
@@ -56,21 +58,27 @@ def attach_metric_logger(
         evaluator.run(data_loader)
         metrics = evaluator.state.metrics
 
-        message = ''
+        message = ""
         for metric_name, metric_value in metrics.items():
-            writer.add_scalar(f'{data_name}/mean_{metric_name}', metric_value, engine.state.epoch)
-            message += f'{metric_name}: {metric_value:.3f} '
+            writer.add_scalar(
+                f"{data_name}/mean_{metric_name}",
+                metric_value,
+                engine.state.epoch,
+            )
+            message += f"{metric_name}: {metric_value:.3f} "
 
         logging.info(message)
 
 
-def attach_model_checkpoint(trainer: engine.Engine, models: Dict[str, nn.Module]):
+def attach_model_checkpoint(
+    trainer: engine.Engine, models: Dict[str, nn.Module]
+):
     def to_epoch(trainer: engine.Engine, event_name: str):
         return trainer.state.epoch
 
     handler = handlers.ModelCheckpoint(
-        './models',
-        'model',
+        "./models",
+        "model",
         create_dir=True,
         require_empty=False,
         n_saved=None,
