@@ -34,6 +34,7 @@ RUN mkdir /kubric/images
 # Copy the notebook into the Docker image
 COPY Chapter_5_Synthetic_Data_Blender.ipynb /kubric
 COPY Chapter_5_Synthetic_Data_Fractals.ipynb /kubric
+COPY README.md /kubric
 
 # Copy the images into the Docker image
 COPY images/ptml_helloworld_blend.png /kubric/images
