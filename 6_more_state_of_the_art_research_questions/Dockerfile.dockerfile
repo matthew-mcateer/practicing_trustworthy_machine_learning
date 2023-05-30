@@ -2,30 +2,26 @@
 
 FROM python:3.9-slim:latest
 
-# Update the package lists for upgrades for security purposes
-RUN apt-get update
-
-# Install pip
-RUN apt-get install -y python3-pip
-
-# Install Jupyter Lab
-RUN pip3 install jupyterlab watermark
+# Update the package lists for upgrades for security purposes and install pip
+RUN apt-get update \
+    && apt-get install -y python3-pip
 
 # Set the working directory
 WORKDIR /app
 
+# Copy the notebooks, requirements, and README into the Docker image
+COPY Chapter_6_Federated_Learning_Simulations.ipynb \
+    Chapter_6_Homomorphic_Encryption_NN.ipynb \
+    requirements-chapter6.txt \
+    README.md \
+    /app/
+
 # Install dependencies for FLUTE
-RUN git clone \
+RUN pip3 install -r requirements-chapter6.txt \
+    && git clone \
         https://github.com/microsoft/msrflute.git \
     && cd msrflute \
     && pip install -r requirements.txt
-
-RUN mkdir /app/images
-
-# Copy the notebook into the Docker image
-COPY Chapter_6_Federated_Learning_Simulations.ipynb /app
-COPY Chapter_6_Homomorphic_Encryption_NN.ipynb /app
-COPY README.md /app
 
 # Expose the port Jupyter Lab will be served on
 EXPOSE 8888
