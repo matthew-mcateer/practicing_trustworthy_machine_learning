@@ -1,0 +1,21 @@
+# Base requirements
+datasets ; python_version == "3.6"
+ipywidgets ; python_version == "3.6"
+ipykernel ; python_version == "3.6"
+jupyterlab ; python_version == "3.6"
+matplotlib ; python_version == "3.6"
+nlp ; python_version == "3.6"
+numpy ; python_version == "3.6"
+scikit-learn ; python_version == "3.6"
+torch ; python_version == "3.6"
+transformers ; python_version == "3.6"
+watermark ; python_version == "3.6"
+
+# Chapter 1 - Privacy
+hagrid ; python_version == "3.6"
+opacus ; python_version == "3.6"
+sycret ; python_version == "3.6"
+syft @ git+https://github.com/OpenMined/PySyft@sympc-dev#egg=syft&subdirectory=packages/syft ; python_version == "3.6"
+torch>=1.6,<=1.8.1 ; python_version == "3.6"
+torchcsprng<=0.2.1 ; python_version == "3.6"
+tqdm ; python_version == "3.6"

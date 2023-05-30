@@ -1,0 +1,21 @@
+# Base requirements
+datasets ; python_version < "4.0"
+ipywidgets ; python_version < "4.0"
+ipykernel ; python_version < "4.0"
+jupyterlab ; python_version < "4.0"
+matplotlib ; python_version < "4.0"
+nlp ; python_version < "4.0"
+numpy ; python_version < "4.0"
+scikit-learn ; python_version < "4.0"
+torch ; python_version < "4.0"
+transformers ; python_version < "4.0"
+watermark ; python_version < "4.0"
+
+# Chapter 1 - Privacy
+dill==0.3.5.1 ; python_version < "4.0"
+hagrid ; python_version < "4.0"
+nlp ; python_version < "4.0"
+opacus ; python_version < "4.0"
+pysyft ; python_version < "4.0"
+torchcsprng==0.1.3+cu101 ; python_version < "4.0"
+tqdm ; python_version < "4.0"
