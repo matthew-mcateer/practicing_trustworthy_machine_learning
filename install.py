@@ -1,11 +1,16 @@
 import subprocess
 import sys
 
-is_colab = "google.colab" in sys.modules
-is_kaggle = "kaggle_secrets" in sys.modules
-# torch-scatter binaries depend on the torch and CUDA version, so we define the
-# mappings here for Colab & Kaggle
-torch_to_cuda = {"1.10.0": "cu113", "1.9.0": "cu111", "1.9.1": "cu111"}
+def check_if_colab() -> bool:
+    """Check if this is being run in Google Colab."""
+    return "google.colab" in sys.modules
+
+def check_if_kaggle() -> bool:
+    """Check if this is being run in Kaggle."""
+    return "kaggle_secrets" in sys.modules
+
+IS_COLAB = check_if_colab()
+IS_KAGGLE = check_if_kaggle()
 
 
 class RequirementsInstallError(Exception):
@@ -16,21 +21,38 @@ class RequirementsInstallError(Exception):
 
 
 def install_requirements(
+    is_chapter0: bool = False, 
+    is_chapter1: bool = False, 
+    is_chapter1_v2: bool = False, 
     is_chapter2: bool = False, 
+    is_chapter3: bool = False,
+    is_chapter4: bool = False,
+    is_chapter5: bool = False,
     is_chapter6: bool = False,
     is_chapter7: bool = False,
-    is_chapter7_v2: bool = False,
-    is_chapter10: bool = False,
-    is_chapter11: bool = False
     ):
     """Installs the required packages for the project."""
 
     print("⏳ Installing base requirements ...")
     cmd = ["python", "-m", "pip", "install", "-r"]
-    if is_chapter7:
-        cmd += "requirements-chapter7.txt -f https://download.pytorch.org/whl/torch_stable.html".split()
-    elif is_chapter7_v2:
-        cmd.append("requirements-chapter7-v2.txt")
+    if is_chapter0:
+        cmd.append("0_introduction/requirements-chapter0.txt")
+    elif is_chapter1:
+        cmd += "1_privacy/requirements-chapter1.txt -f https://download.pytorch.org/whl/torch_stable.html".split()
+    elif is_chapter1_v2:
+        cmd.append("1_privacy/requirements-chapter1-v2.txt")
+    elif is_chapter2:
+        cmd.append("2_fairness_and_bias/requirements-chapter2.txt")
+    elif is_chapter3:
+        cmd.append("3_model_explainability_and_interpretability/requirements-chapter3.txt")
+    elif is_chapter4:
+        cmd.append("4_robustness/requirements-chapter4.txt")
+    elif is_chapter5:
+        cmd.append("5_secure_and_trustworthy_data_generation/requirements-chapter5.txt")
+    elif is_chapter6:
+        cmd.append("6_more_state_of_the_art_research_questions/requirements-chapter6.txt")
+    elif is_chapter7:
+        cmd.append("7_from_theory_to_practice/requirements-chapter7.txt")
     else:
         cmd.append("requirements.txt")
     process_install = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -38,6 +60,7 @@ def install_requirements(
         raise RequirementsInstallError("😭 Failed to install base requirements")
     else:
         print("✅ Base requirements installed!")
+    
     print("⏳ Installing Git LFS ...")
     process_lfs = subprocess.run(["apt", "install", "git-lfs"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if process_lfs.returncode == -1:
@@ -53,7 +76,7 @@ def install_requirements(
             stderr=subprocess.PIPE,
         )
 
-    if is_chapter6:
+    if is_chapter5:
         transformers_cmd = "python -m pip install datasets==2.0.0".split()
         _ = subprocess.run(
             transformers_cmd,
@@ -61,39 +84,11 @@ def install_requirements(
             stderr=subprocess.PIPE,
         )
 
-    if is_chapter10:
+    if is_chapter6:
         wandb_cmd = "python -m pip install wandb".split()
         _ = subprocess.run(
             wandb_cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )
-    if is_chapter11:
-        import torch
-
-        torch_version = torch.__version__.split("+")[0]
-        print(f"⏳ Installing torch-scatter for torch v{torch_version} ...")
-        if is_colab:
-            torch_scatter_cmd = f"python -m pip install torch-scatter -f https://data.pyg.org/whl/torch-{torch_version}+{torch_to_cuda[torch_version]}.html".split()
-        else:
-            # Kaggle uses CUDA 11.0 by default, so we need to build from source
-            torch_scatter_cmd = "python -m pip install torch-scatter".split()
-        process_scatter = subprocess.run(
-            torch_scatter_cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        if process_scatter.returncode == -1:
-            raise RequirementsInstallError(f"😭 Failed to install torch-scatter. torch-scatter installation returned code {process_scatter.returncode}")
-        else:
-            print("torch-scatter installation returned code ", process_scatter.returncode)
-            print("✅ torch-scatter installed!")
-        print("⏳ Installing soundfile ...")
-        process_audio = subprocess.run(
-            ["apt", "install", "libsndfile1"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
-        )
-        if process_audio.returncode == -1:
-            raise RequirementsInstallError("😭 Failed to install soundfile")
-        else:
-            print("✅ soundfile installed!")
-        print("🥳 Chapter installation complete!")
+    print("🥳 Chapter installation complete!")
