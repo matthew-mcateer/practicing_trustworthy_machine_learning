@@ -249,7 +249,7 @@ Distributed under the Apache-2.0 license. See [`LICENSE`](LICENSE) for more info
 ## Contact
 
 <a href="https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=matthew-mcateer/practicing_trustworthy_machine_learning&max=3" />
+  <img src="https://contrib.rocks/image?repo=matthew-mcateer/practicing_trustworthy_machine_learning&max=3&columns=3&anon=0" />
 </a>
 
 Matthew Mcateer (Co-First Author)
