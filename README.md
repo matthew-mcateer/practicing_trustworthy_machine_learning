@@ -239,7 +239,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the Apache License. See [`LICENSE`](LICENSE) for more information.
+Distributed under the Apache-2.0 license. See [`LICENSE`](LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -248,11 +248,21 @@ Distributed under the Apache License. See [`LICENSE`](LICENSE) for more informat
 <!-- CONTACT -->
 ## Contact
 
-Matthew Mcateer (Author) - [@MatthewMcAteer0](https://twitter.com/MatthewMcAteer0) - oreillybook@5cubelabs.us
+<a href="https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=matthew-mcateer/practicing_trustworthy_machine_learning&max=3" />
+</a>
 
-Yada Pruksachatkun (Author) - [@yadapruksachatk](https://twitter.com/yadapruksachatk) - yada@5cubelabs.us
- 
-Subhabrata Majumdar (Author) - [@sbmisi](https://twitter.com/sbmisi) - subho@5cubelabs.us
+Matthew Mcateer (Co-First Author)
+- Twitter: [@MatthewMcAteer0](https://twitter.com/MatthewMcAteer0)
+- Email: [oreillybook@5cubelabs.us](mailto:oreillybook@5cubelabs.us)
+
+Subhabrata Majumdar (Co-First Author)
+- Twitter: [@sbmisi](https://twitter.com/sbmisi)
+- Email: [subho@5cubelabs.us](mailto:subho@5cubelabs.us)
+
+Yada Pruksachatkun (Co-First Author)
+- Twitter: [@yadapruksachatk](https://twitter.com/yadapruksachatk)
+- Email: [yada@5cubelabs.us](mailto:yada@5cubelabs.us)
 
 Project Link: [https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning](https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning)
 
