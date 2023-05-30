@@ -2,26 +2,21 @@
 
 FROM python:3.9-slim:latest
 
-# Update the package lists for upgrades for security purposes
-RUN apt-get update
-
-# Install pip
-RUN apt-get install -y python3-pip
-
-# Install Jupyter Lab
-RUN pip3 install jupyterlab watermark
+# Update the package lists for upgrades for security purposes and install pip
+RUN apt-get update \
+    && apt-get install -y python3-pip
 
 # Set the working directory
 WORKDIR /app
 
+# Copy the notebook, requirements, and README into the Docker image
+COPY Chapter_0_Safely_Loading_Saved_Models.ipynb \
+    requirements-chapter0.txt \
+    README.md \
+    /app/
+
 # Install dependencies for saved model loading
-RUN pip3 install safetensors transformers
-
-RUN mkdir /app/images
-
-# Copy the notebook into the Docker image
-COPY Chapter_0_Safely_Loading_Saved_Models.ipynb /app
-COPY README.md /app
+RUN pip3 install -r requirements-chapter0.txt
 
 # Expose the port Jupyter Lab will be served on
 EXPOSE 8888
