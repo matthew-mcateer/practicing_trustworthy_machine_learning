@@ -1,0 +1,23 @@
+# Base requirements
+datasets ; python_version < "4.0"
+ipywidgets ; python_version < "4.0"
+ipykernel ; python_version < "4.0"
+jupyterlab ; python_version < "4.0"
+matplotlib ; python_version < "4.0"
+nlp ; python_version < "4.0"
+numpy ; python_version < "4.0"
+scikit-learn ; python_version < "4.0"
+torch ; python_version < "4.0"
+transformers ; python_version < "4.0"
+watermark ; python_version < "4.0"
+
+# Chapter 5 - Secure and Trustworthy Data Generation
+fgvcdata ; python_version < "4.0"
+hydra-core ; python_version < "4.0"
+merlin-dataloader==0.0.2 ; python_version < "4.0"
+omegaconf ; python_version < "4.0"
+pytorch-lightning ; python_version < "4.0"
+torchmetrics ; python_version < "4.0"
+fractal-pretraining @ git+https://github.com/catalys1/fractal-pretraining.git@main ; python_version < "4.0"
+kubric @ git+https://github.com/google-research/kubric@main ; python_version < "4.0"
+
