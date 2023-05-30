@@ -15,7 +15,7 @@ RUN pip3 install jupyterlab watermark
 WORKDIR /kubric
 
 # Install dependencies for Fractal Rendering
-RUN pip3 pytorch-lightning \
+RUN pip3 install pytorch-lightning \
         omegaconf \
         torchmetrics \
         fgvcdata \
