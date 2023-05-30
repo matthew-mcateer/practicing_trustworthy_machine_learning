@@ -1,0 +1,20 @@
+# Base requirements
+datasets ; python_version < "4.0"
+ipywidgets ; python_version < "4.0"
+ipykernel ; python_version < "4.0"
+jupyterlab ; python_version < "4.0"
+matplotlib ; python_version < "4.0"
+nlp ; python_version < "4.0"
+numpy ; python_version < "4.0"
+scikit-learn ; python_version < "4.0"
+torch ; python_version < "4.0"
+transformers ; python_version < "4.0"
+watermark ; python_version < "4.0"
+
+# Chapter 7 - From Theory to Practice
+modAL ; python_version < "4.0"
+pandas ; python_version < "4.0"
+python-ternary ; python_version < "4.0"
+scipy ; python_version < "4.0"
+seaborn ; python_version < "4.0"
+xgboost==1.4.2 ; python_version < "4.0"
