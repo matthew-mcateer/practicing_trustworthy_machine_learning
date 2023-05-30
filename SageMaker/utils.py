@@ -10,13 +10,25 @@ import torch
 import transformers
 from IPython.display import set_matplotlib_formats
 
-# Check if we have a GPU
-is_gpu_available = torch.cuda.is_available()
-# Check if this is being run in Google Colab
-is_colab = "google.colab" in sys.modules
-# Check if this is being run in Kaggle
-is_kaggle = "kaggle_secrets" in sys.modules
+# torch-scatter binaries depend on the torch and CUDA version, so we define the
+# mappings here for Colab & Kaggle
+TORCH_TO_CUDA = {"1.10.0": "cu113", "1.9.0": "cu111", "1.9.1": "cu111"}
 
+def check_is_gpu_available() -> bool:
+    """Check if we have a GPU available."""
+    return torch.cuda.is_available()
+
+def check_if_colab() -> bool:
+    """Check if this is being run in Google Colab."""
+    return "google.colab" in sys.modules
+
+def check_if_kaggle() -> bool:
+    """Check if this is being run in Kaggle."""
+    return "kaggle_secrets" in sys.modules
+
+IS_GPU_AVAILABLE = check_is_gpu_available()
+IS_COLAB = check_if_colab()
+IS_KAGGLE = check_if_kaggle()
 
 def install_mpl_fonts():
     font_dir = ["../orm_fonts/"]
@@ -37,11 +49,11 @@ def display_library_version(library):
 
 def setup_chapter():
     # Check if we have a GPU
-    if not is_gpu_available:
+    if not IS_GPU_AVAILABLE:
         print("No GPU was detected! This notebook can be *very* slow without a GPU 🐢")
-        if is_colab:
+        if IS_COLAB:
             print("Go to Runtime > Change runtime type and select a GPU hardware accelerator.")
-        if is_kaggle:
+        if IS_KAGGLE:
             print("Go to Settings > Accelerator and select GPU.")
     # Give visibility on versions of the core libraries
     display_library_version(transformers)
