@@ -1,0 +1,18 @@
+# Base requirements
+datasets ; python_version < "4.0"
+ipywidgets ; python_version < "4.0"
+ipykernel ; python_version < "4.0"
+jupyterlab ; python_version < "4.0"
+matplotlib ; python_version < "4.0"
+nlp ; python_version < "4.0"
+numpy ; python_version < "4.0"
+scikit-learn ; python_version < "4.0"
+torch ; python_version < "4.0"
+transformers ; python_version < "4.0"
+watermark ; python_version < "4.0"
+
+# Chapter 4 - Robustness
+adversarial-robustness-toolbox ; python_version < "4.0"
+git+https://github.com/nottombrown/imagenet_stubs ; python_version < "4.0"
+pandas ; python_version < "4.0"
+tensorflow ; python_version < "4.0"
