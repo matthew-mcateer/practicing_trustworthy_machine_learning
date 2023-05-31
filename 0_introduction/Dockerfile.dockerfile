@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.2.1
 
-FROM python:3.9-slim:latest
+FROM python:3.9-slim
 
 # Update the package lists for upgrades for security purposes and install pip
 RUN apt-get update \
