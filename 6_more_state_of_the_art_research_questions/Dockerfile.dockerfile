@@ -1,16 +1,21 @@
 # syntax = docker/dockerfile:1.2.1
 
-FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
 
 # Set the working directory
 WORKDIR /app
 
+RUN mpiexec --version
+RUN ls /usr/lib/openmpi/
+
 # Update the package lists for upgrades for security purposes and install pip
-RUN apt-get update \
-    && apt-get install -y \
-        git \
-        wget
-RUN sudo apt install libopenmpi-dev && pip3 install mpi4py
+RUN apt-get update && apt-get install -y \
+    git \
+    wget \
+    libopenmpi-dev
+RUN mpiexec --version
+RUN ls /usr/lib/openmpi/
+RUN pip3 install mpi4py
 
 # Copy the notebooks, requirements, and README into the Docker image
 COPY Chapter_6_Federated_Learning_Simulations.ipynb \
