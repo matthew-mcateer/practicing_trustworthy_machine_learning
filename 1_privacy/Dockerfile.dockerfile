@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.2.1
 
-FROM python:3.9-slim:latest
+FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
 
 # Update the package lists for upgrades for security purposes and install pip
 RUN apt-get update \
