@@ -2,12 +2,15 @@
 
 FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
 
-# Update the package lists for upgrades for security purposes and install pip
-RUN apt-get update \
-    && apt-get install -y python3-pip
-
 # Set the working directory
 WORKDIR /app
+
+# Update the package lists for upgrades for security purposes and install pip
+RUN apt-get update \
+    && apt-get install -y \
+        git \
+        wget
+RUN sudo apt install libopenmpi-dev && pip3 install mpi4py
 
 # Copy the notebooks, requirements, and README into the Docker image
 COPY Chapter_6_Federated_Learning_Simulations.ipynb \
@@ -17,8 +20,9 @@ COPY Chapter_6_Federated_Learning_Simulations.ipynb \
     /app/
 
 # Install dependencies for FLUTE
-RUN pip3 install -r requirements-chapter6.txt \
-    && git clone \
+#RUN pip3 install mpi4py
+RUN pip3 install -r requirements-chapter6.txt
+RUN git clone \
         https://github.com/microsoft/msrflute.git \
     && cd msrflute \
     && pip install -r requirements.txt

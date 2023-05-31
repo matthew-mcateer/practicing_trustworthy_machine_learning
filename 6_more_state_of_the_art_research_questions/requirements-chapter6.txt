@@ -13,4 +13,3 @@ watermark ; python_version < "4.0"
 
 # Chapter 6 - More State of the Art Research Questions
 tenseal ; python_version < "4.0"
-git+https://github.com/microsoft/msrflute.git@main ; python_version < "4.0"
