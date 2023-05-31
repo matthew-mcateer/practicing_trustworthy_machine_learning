@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+authors:
+- family-names: "Matthew"
+  given-names: "McAteer"
+- family-names: "Yada"
+  given-names: "Pruksachatkun"
+- family-names: "Subhabrata"
+  given-names: "Majumdar"
+title: "Practicing Trustworthy Machine Learning"
+date-released: 2023-02-07
+url: "https://github.com/matthew-mcateer/practicing_trustworthy_machine_learning"
