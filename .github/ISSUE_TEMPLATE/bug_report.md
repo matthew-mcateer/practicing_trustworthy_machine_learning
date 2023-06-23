@@ -2,7 +2,7 @@
 name: Bug report
 about: Submit a report to help us improve the book
 title: ''
-labels: ''
+labels: 'bug'
 assignees: ''
 
 ---
@@ -11,15 +11,15 @@ assignees: ''
 
 The problem arises in chapter:
 
-* [ ] Introduction
-* [ ] Privacy
-* [ ] Fairness and Bias
-* [ ] Model Explainability and Interpretability
-* [ ] Robustness
-* [ ] Secure and Trustworthy Data Generation
-* [ ] More State of the Art Research Questions
-* [ ] From Theory to Practice
-* [ ] An Ecosystem of Trust
+* [ ] [Chapter 0: Introduction](0_introduction/)
+* [ ] [Chapter 1: Privacy](1_privacy/)
+* [ ] [Chapter 2: Fairness and Bias](2_fairness/)
+* [ ] [Chapter 3: Model Explainability and Interpretability](3_explainability/)
+* [ ] [Chapter 4: Robustness](4_robustness/)
+* [ ] [Chapter 5: Secure and Trustworthy Data Generation](5_secure_data/)
+* [ ] [Chapter 6: More State of the Art Research Questions](6_more_research/)
+* [ ] [Chapter 7: From Theory to Practice](7_practice/)
+* [ ] [Chapter 8: An Ecosystem of Trust](8_ecosystem/)
 
 
 ## Describe the bug
