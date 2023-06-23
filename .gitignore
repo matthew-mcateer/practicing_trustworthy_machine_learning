@@ -135,3 +135,6 @@ dmypy.json
 # mac
 .DS_Store
 tmp/
+
+# data outputs
+*.jsonl
